@@ -69,7 +69,7 @@ const Navigation = () => {
               : "bg-gray-300 text-black"
           }`}
         >
-          Home
+          Форма
         </Link>
         <button
           className={`px-4 py-2 rounded-full ${
@@ -79,7 +79,7 @@ const Navigation = () => {
           }`}
           onClick={handleListClick}
         >
-          Liste
+          Лист
         </button>
       </div>
 
