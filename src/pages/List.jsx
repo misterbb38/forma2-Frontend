@@ -96,7 +96,7 @@ const List = () => {
   };
 
   const handleDelete = async (id) => {
-    setLoading(true); // Start loading when deleting
+    setLoading(true); // Start loading when deletings
     try {
       await fetch(`${apiUrl}/api/forms/${id}`, { method: "DELETE" });
       fetchForms(); // Refresh forms after deletion
