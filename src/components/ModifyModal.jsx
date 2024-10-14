@@ -167,6 +167,8 @@ const ModifyModal = ({ form, onClose, onUpdate }) => {
     registrationPages: null,
     patent: null,
     greenCard: null,
+    inn: null,
+    snils: null,
   });
 
   const apiUrl = import.meta.env.VITE_APP_API_BASE_URL;
@@ -233,6 +235,13 @@ const ModifyModal = ({ form, onClose, onUpdate }) => {
       if (files.greenCard) {
         data.append("greenCard", files.greenCard);
       }
+
+      if (files.inn) {
+        data.append("greenCard", files.inn);
+      }
+      if (files.snils) {
+        data.append("greenCard", files.snils);
+      }
     }
 
     try {
@@ -266,6 +275,8 @@ const ModifyModal = ({ form, onClose, onUpdate }) => {
         registrationPages: null,
         patent: null,
         greenCard: null,
+        inn: null,
+        snils: null,
       });
 
       onUpdate();
@@ -492,6 +503,32 @@ const ModifyModal = ({ form, onClose, onUpdate }) => {
                 <input
                   type="file"
                   name="greenCard"
+                  onChange={handleFileChange}
+                  className="file-input file-input-bordered w-full"
+                  accept=".pdf,image/*"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="inn" className="block mb-1">
+                  ИНН
+                </label>
+                <input
+                  type="file"
+                  name="inn"
+                  onChange={handleFileChange}
+                  className="file-input file-input-bordered w-full"
+                  accept=".pdf,image/*"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="snils" className="block mb-1">
+                  СНИЛС
+                </label>
+                <input
+                  type="file"
+                  name="snils"
                   onChange={handleFileChange}
                   className="file-input file-input-bordered w-full"
                   accept=".pdf,image/*"

@@ -992,6 +992,8 @@ const Home = () => {
     registrationPages: null,
     patent: null,
     greenCard: null,
+    inn: null,
+    snils: null,
   });
 
   const [loading, setLoading] = useState(false);
@@ -1063,6 +1065,8 @@ const Home = () => {
       if (formData.visa) data.append("visa", formData.visa);
       if (formData.patent) data.append("patent", formData.patent);
       if (formData.greenCard) data.append("greenCard", formData.greenCard);
+      if (formData.inn) data.append("inn", formData.inn);
+      if (formData.snils) data.append("snils", formData.snils);
     }
 
     try {
@@ -1098,6 +1102,8 @@ const Home = () => {
         registrationPages: null,
         patent: null,
         greenCard: null,
+        inn: null,
+        snils: null,
       });
     } catch (error) {
       console.error("Erreur lors de l'envoi du formulaire :", error);
@@ -1329,6 +1335,32 @@ const Home = () => {
                   name="greenCard"
                   onChange={handleFileChange}
                   className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="inn" className="block mb-1">
+                  ИНН
+                </label>
+                <input
+                  type="file"
+                  name="inn"
+                  onChange={handleFileChange}
+                  className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+                  accept=".pdf,image/*"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="snils" className="block mb-1">
+                  СНИЛС
+                </label>
+                <input
+                  type="file"
+                  name="snils"
+                  onChange={handleFileChange}
+                  className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+                  accept=".pdf,image/*"
                 />
               </div>
             </>
